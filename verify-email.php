@@ -9,7 +9,7 @@ if (isset($_GET['token'])) {
     $token = $_GET['token']; 
 
     // Query to check if the token exists in the database and retrieve the verification status
-    $verify_query = "SELECT verify_token, verify_status FROM register_php WHERE verify_token = '$token' LIMIT 1";
+    $verify_query = "SELECT verify_token, verify_status FROM registration WHERE verify_token = '$token' LIMIT 1";
 
     // Execute the query
     $result_verify_query = mysqli_query($conn, $verify_query); 
@@ -25,7 +25,7 @@ if (isset($_GET['token'])) {
             $clicked_toked = $row['verify_token']; 
 
             // Update query to set the verify_status to '1' (verified)
-            $update_query = "UPDATE register_php SET verify_status = '1' WHERE verify_token = '$clicked_toked' LIMIT 1";
+            $update_query = "UPDATE registration SET verify_status = '1' WHERE verify_token = '$clicked_toked' LIMIT 1";
             
             // Execute the update query
             $result_update_query = mysqli_query($conn, $update_query); 

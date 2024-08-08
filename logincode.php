@@ -19,7 +19,7 @@ if (isset($_POST['login_now']))
 
     if (!empty($enter_email) && !empty($enter_password)) 
     {
-        $login_query = "SELECT * FROM register_php WHERE email = '$enter_email' AND password = '$enter_password' LIMIT 1";
+        $login_query = "SELECT * FROM registration WHERE email = '$enter_email' AND password = '$enter_password' LIMIT 1";
         $result_login_query = mysqli_query($conn, $login_query);
 
         if (mysqli_num_rows($result_login_query) > 0) 

@@ -91,7 +91,7 @@ if(isset($_POST['register_btn'])) {
     }
      
     // Check if the email already exists in the database
-    $check_email_query = "SELECT email FROM register_php WHERE email = '$email'";
+    $check_email_query = "SELECT email FROM registration WHERE email = '$email'";
     $result_check_email = mysqli_query($conn, $check_email_query);
     if(mysqli_num_rows($result_check_email) > 0) {
 
@@ -101,7 +101,7 @@ if(isset($_POST['register_btn'])) {
     }
 
     // Check if the phone number already exists in the database
-    $check_phone_query = "SELECT phone FROM register_php WHERE phone = '$phone_number'";
+    $check_phone_query = "SELECT phone FROM registration WHERE phone = '$phone_number'";
     $result_phone_email = mysqli_query($conn, $check_phone_query);
     if(mysqli_num_rows($result_phone_email) > 0) {
 
@@ -114,7 +114,7 @@ if(isset($_POST['register_btn'])) {
         if($password === $confirm_password) {
 
             // Insert the user data into the database
-            $query = "INSERT INTO register_php(name, phone, email, password, confirm_password, verify_token) 
+            $query = "INSERT INTO registration(name, phone, email, password, confirm_password, verify_token) 
                       VALUES ('$name', '$phone_number', '$email', '$password', '$confirm_password', '$verify_token')";
             $result_query = mysqli_query($conn, $query);
             

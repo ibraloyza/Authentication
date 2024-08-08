@@ -58,7 +58,7 @@ if (isset($_POST['reset_password'])) {
     $token = md5(rand()); 
 
     // Query to check if the email exists in the database
-    $check_email = "SELECT email FROM register_php WHERE email = '$email' LIMIT 1";
+    $check_email = "SELECT email FROM registration WHERE email = '$email' LIMIT 1";
     $result_check_email = mysqli_query($conn, $check_email);
     
     // Check if any rows are returned
@@ -70,7 +70,7 @@ if (isset($_POST['reset_password'])) {
         $get_email = $row['email'];
 
         // Update the token in the database
-        $update_token = "UPDATE register_php SET verify_token = '$token' WHERE email = '$get_email' LIMIT 1";
+        $update_token = "UPDATE registration SET verify_token = '$token' WHERE email = '$get_email' LIMIT 1";
         $result_update_token = mysqli_query($conn, $update_token);
         
         // Check if the update query was successful
@@ -130,7 +130,7 @@ if (isset($_POST['password_change']))
         {
             
             // Query to check if the token exists in the database
-            $check_token = "SELECT verify_token FROM register_php WHERE verify_token='$token' LIMIT 1";
+            $check_token = "SELECT verify_token FROM registration WHERE verify_token='$token' LIMIT 1";
             $result_check_token = mysqli_query($conn, $check_token);
             
             // Check if any rows are returned
@@ -142,7 +142,7 @@ if (isset($_POST['password_change']))
                 {
                     
                     // Update the password in the database
-                    $update_password = "UPDATE register_php SET password ='$new_password' WHERE verify_token='$token' LIMIT 1";
+                    $update_password = "UPDATE registration SET password ='$new_password' , confirm_password ='$confirm_password'      WHERE verify_token='$token' LIMIT 1";
                     $result_update_password = mysqli_query($conn, $update_password);
                     
                     // Check if the update query was successful                    
@@ -153,7 +153,7 @@ if (isset($_POST['password_change']))
                         $new_token = md5(rand()); 
 
                         // Update the token in the database
-                        $update_to_new_token = "UPDATE register_php SET verify_token ='$new_token' WHERE verify_token='$token' LIMIT 1";
+                        $update_to_new_token = "UPDATE registration SET verify_token ='$new_token' WHERE verify_token='$token' LIMIT 1";
                         $result_update_to_new_token = mysqli_query($conn, $update_to_new_token);
                         
                         // Set a session status message indicating the password has been updated
@@ -180,7 +180,7 @@ if (isset($_POST['password_change']))
             else 
             {
 
-                $_SESSION['status'] = "Invalid Token"; 
+                $_SESSION['status'] = "you are already reset your password"; 
                 header("Location: password-change.php?token=$token&email=$email"); 
                 exit(0);
             }
