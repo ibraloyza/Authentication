@@ -1,11 +1,11 @@
 <?php
 session_start(); 
-include('dbconn.php'); 
+include '../config/dbconn.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php'; 
+require '../vendor/autoload.php'; 
 
 
 function send_reset_password($get_name, $get_email, $token) {
@@ -28,7 +28,7 @@ function send_reset_password($get_name, $get_email, $token) {
     <h2>Hi $get_name,</h2>
     <p>We received a request to reset your password for your account on [WEB OF IT].</p>
     <p>To reset your password, click the link below:</p>
-    <p><a href='http://localhost/Authentication/password-change.php?token=$token&email=$get_email'>Reset Password</a></p>
+    <p><a href='http://localhost/Authentication/pages/password-change.php?token=$token&email=$get_email'>Reset Password</a></p>
     <p>If you have any questions or need further assistance, feel free to contact our support team.</p>
     <br />
     <p>Thank you,</p>

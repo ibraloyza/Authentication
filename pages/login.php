@@ -3,13 +3,13 @@ session_start();
 
 if (isset($_SESSION['authenticated'])) {
     $_SESSION['status'] = "You are already Logged in";
-    header("Location: dashboard.php");
+    header("Location: ../Dashboard/dashboard.php");
     exit(0);
 }
 
 $page_title ="Login Form";
-include('includes/header.php');
-include('includes/navbar.php');
+include('../includes/header.php');
+include('../includes/navbar.php');
 ?>
 <div id="Register">
     <div class="py-5">
@@ -62,4 +62,4 @@ include('includes/navbar.php');
         </div>
     </div>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

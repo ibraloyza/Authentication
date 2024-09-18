@@ -1,9 +1,9 @@
 <?php 
 session_start(); 
-
+include ('../pages/authentication.php'); 
 $page_title = "Login Form"; 
-include('includes/header.php'); 
-include('includes/navbar.php');
+include('../includes/header.php');
+include('../includes/navbar.php');
 ?>
 
 <div class="py-5"> 
@@ -55,4 +55,4 @@ include('includes/navbar.php');
 </div>
 
 
-<?php include 'includes/footer.php';  ?>
+<?php include '../includes/footer.php';  ?>

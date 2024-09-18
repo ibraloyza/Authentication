@@ -3,8 +3,8 @@
 session_start(); 
 
 $page_title = "Paasword Change"; 
-include('includes/header.php'); 
-include('includes/navbar.php'); 
+include('../includes/header.php'); 
+include('../includes/navbar.php'); 
 
 ?>
 
@@ -58,4 +58,4 @@ include('includes/navbar.php');
     </div>
 </div>
 
-<?php include 'includes/footer.php'; ?> 
+<?php include '../includes/footer.php'; ?> 

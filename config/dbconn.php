@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","Authentication", 3307);
+$conn = mysqli_connect("localhost","root","","Authentication");
 if($conn->connect_errno){
     echo "$conn->connect_errno";
 }else {

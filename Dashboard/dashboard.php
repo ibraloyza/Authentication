@@ -1,8 +1,10 @@
 <?php 
-include ('authentication.php'); 
+// Corrected path to authentication.php
+include ('../pages/authentication.php'); 
+
 $page_title = "Dashboard"; 
-include('includes/header.register.php'); 
-include('includes/navbar.php'); 
+include('../includes/header.php'); 
+include('../includes/navbar.php'); 
 ?>
 
 <div class="py-5">
@@ -22,5 +24,4 @@ include('includes/navbar.php');
     </div>
 </div>
 
-
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

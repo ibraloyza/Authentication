@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'dbconn.php';
+include '../config/dbconn.php';
 
 if (isset($_POST['login_now'])) 
 {
@@ -32,7 +32,7 @@ if (isset($_POST['login_now']))
                 $_SESSION['authenticated'] = TRUE;
                 $_SESSION['status'] = "You are Logged In Successfully.";
                 
-                header("Location: dashboard.php");
+                header("Location: ../Dashboard/dashboard.php");
                 exit(0);
 
             } 

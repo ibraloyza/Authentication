@@ -2,8 +2,8 @@
 session_start(); 
 
 $page_title = "Registration Form"; 
-include('includes/header.php'); 
-include('includes/navbar.php'); 
+include('../includes/header.php'); 
+include('../includes/navbar.php'); 
 ?>
 <div id="Resgister" class="py-5" style="margin-top: -15px;"> 
 
@@ -67,4 +67,4 @@ include('includes/navbar.php');
 </div>
 
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

@@ -1,7 +1,8 @@
 <?php
 session_start(); 
 
-include 'dbconn.php'; 
+include '../config/dbconn.php';
+
 
 use PHPMailer\PHPMailer\PHPMailer; 
 use PHPMailer\PHPMailer\Exception; 
@@ -30,7 +31,7 @@ function sendemail_verify($name, $email, $verify_token) {
     <h2>You have Registered with WEB OF IT</h2>
     <h5>Verify your email address to login with the below given link</h5>
     <br /><br />
-    <a href='http://localhost/Authentication/verify-email.php?token=$verify_token'>Click Me</a>
+    <a href='http://localhost/Authentication/pages/verify-email.php?token=$verify_token'>Click Me</a>
     "; 
 
     //send the email

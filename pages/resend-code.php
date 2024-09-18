@@ -1,6 +1,6 @@
 <?php 
 
-include 'dbconn.php';
+include '../config/dbconn.php';
 
 session_start(); 
 
@@ -32,7 +32,7 @@ function resend_email_verify($name, $email, $verify_token){
     <h2>You have Registered with Huud Technology</h2> <!-- Salaan iyo farriin xaqiijin -->
     <h5>Verify your email address to login with the below given link</h5>
     <br /><br />
-    <a href='http://localhost/Authentication/verify-email.php?token=$verify_token'>Click Me</a>
+    <a href='http://localhost/Authentication/pages/verify-email.php?token=$verify_token'>Click Me</a>
     ";
 
     $mail->send();
