@@ -7,7 +7,7 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer; 
 use PHPMailer\PHPMailer\Exception; 
 
-require 'vendor/autoload.php'; 
+require '../vendor/autoload.php'; 
 
 
 function resend_email_verify($name, $email, $verify_token){
@@ -57,7 +57,7 @@ if (isset($_POST['resend_email_btn'])){
         // Sanitize the email input
         $result_email = data_email($_POST['email_resend']);
     
-        $resed_check_email_query = "SELECT * FROM registration WHERE email='$result_email' LIMIT 1";
+        $resed_check_email_query = "SELECT * FROM Students WHERE email='$result_email' LIMIT 1";
         $result_check_email_query = mysqli_query($conn, $resed_check_email_query); 
 
         if (mysqli_num_rows($result_check_email_query) > 0) {

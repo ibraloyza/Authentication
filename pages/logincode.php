@@ -19,7 +19,7 @@ if (isset($_POST['login_now']))
 
     if (!empty($enter_email) && !empty($enter_password)) 
     {
-        $login_query = "SELECT * FROM registration WHERE email = '$enter_email' AND password = '$enter_password' LIMIT 1";
+        $login_query = "SELECT * FROM Students WHERE email = '$enter_email' AND password = '$enter_password' LIMIT 1";
         $result_login_query = mysqli_query($conn, $login_query);
 
         if (mysqli_num_rows($result_login_query) > 0) 
@@ -32,7 +32,7 @@ if (isset($_POST['login_now']))
                 $_SESSION['authenticated'] = TRUE;
                 $_SESSION['status'] = "You are Logged In Successfully.";
                 
-                header("Location: ../Dashboard/dashboard.php");
+                header("Location: ../dashboard.php");
                 exit(0);
 
             } 

@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['authenticated'])) {
     $_SESSION['status'] = "You are already Logged in";
-    header("Location: ../Dashboard/dashboard.php");
+    header("Location: ./dashboard.php");
     exit(0);
 }
 

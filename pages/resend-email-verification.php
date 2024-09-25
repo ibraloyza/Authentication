@@ -1,6 +1,5 @@
 <?php 
 session_start(); 
-include ('../pages/authentication.php'); 
 $page_title = "Login Form"; 
 include('../includes/header.php');
 include('../includes/navbar.php');

@@ -53,7 +53,7 @@ include('../includes/navbar.php');
                         </div>
                         <div class="form-group "> 
                             <button type="submit" class="btn btn-primary" name="register_btn">Register Now</button> 
-                            <p class="float-end">if you are registred  <a href="login.php" >login here</a></p>
+                            <p class="float-end">if you are registred  <a href="./login.php" >login here</a></p>
                            
 
                         </div>
